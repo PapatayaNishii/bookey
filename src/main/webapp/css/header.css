@@ -308,10 +308,36 @@
 	#header .center .bottom .mainMenu.wide {
 		display: none;
 	}
+	
 	#header .center .bottom .search#menu {
 		display: inline-block;
 	}
+	
+#header .center .top {
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	align-content: center;
 }
-@media screen and (max-width: 770px) {
+#header .center .top .left {
+	display: block;
+	max-width: 60%;
+}
+#header .center .top .left .logo {
+	display: block;
+/* 	width: 165px; */
+	height: 60px;
+}
 
+}
+
+@media screen and (max-width: 770px) {
+	#header .center .top .left {
+		display:none;
+	}
+
+	#header .center .top .right .utils {
+		gap:8px;
+		justify-content: space-around;
+	}	
 }
