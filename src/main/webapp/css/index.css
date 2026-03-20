@@ -466,6 +466,16 @@
 		flex-grow: 1;
 		flex-shrink: 1;
 	}
+	#centre .center .top > h1 {
+		opacity:0;
+	}
+	#centre .center .top > h2 {
+		height:20px;
+		opacity:0;
+	}
+	#background .frequent {
+		display:none;
+	}
 }
 @media screen and (max-width: 770px) {
 	#background .frequent .cover .center .shortcutList .shortcutItem .icon {
@@ -475,21 +485,49 @@
 	#background .frequent .cover .center .shortcutList .shortcutItem .text {
 		font-size: 16px;
 	}
-	#background .frequent {
-		display:none;
-	}
-
 	#background .cover .grouper > .bottom .utils > .top > .right {
 		padding:10px 16px;
 	}
 	#background .cover .grouper > .bottom .utils > .top > .right .trending .trendingList .trendingItem a {
 		font-size: 16px;
 	}
-	#centre .center .top > h1 {
-		opacity:0;
+	#background .cover .grouper > .bottom .utils > .bottom {
+		display: flex;
+		flex-direction:column;
+		gap:16px;
 	}
-	#centre .center .top > h2 {
-		height:20px;
-		opacity:0;
+	#background .cover .grouper > .bottom .utils > .bottom > div {
+		width: 100%;
+	}
+	#background .cover .grouper > .bottom .utils > .bottom .dayOff {
+		display: flex;
+		border-right: none;
+	}
+	#background .cover .grouper > .bottom .utils > .bottom .dayOff > .left {
+		display:block;
+		padding: 0 0;
+		width: 100%;
+	}
+	#background .cover .grouper > .bottom .utils > .bottom .dayOff > .right .dayOffsAmount,
+	#background .cover .grouper > .bottom .utils > .bottom .dayOff > .right .desc {
+		display:none;
+	}
+	#background .cover .grouper > .bottom .utils > .bottom .dayOff > .right .dayOffsList {
+		display:flex;
+		justify-content: center;
+		align-items: center;
+		gap: 8px;
+	}
+	#background .cover .grouper > .bottom .utils > .bottom .dayOff > .right .dayOffsList .circleText {
+		flex-shrink: 1;
+	}
+	#background .cover .grouper > .bottom .utils > .bottom .businessHour section {
+		overflow-y: scroll;
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+		font-size:12px;
+	}
+	#background .cover .grouper > .bottom .utils > .bottom .businessHour section::-webkit-scrollbar {
+		display: none;
 	}
 }
