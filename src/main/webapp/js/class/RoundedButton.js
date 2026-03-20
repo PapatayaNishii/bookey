@@ -38,6 +38,15 @@ class RoundedButton extends HTMLElement {
 			  display:inline-block;
 			  word-wrap: break-word;
 			}
+		@media screen and (max-width: 770px) {
+			.rounded-button span {
+				font-size: 12px;
+				transition:0.3s;
+			}
+			.rounded-button {
+				height:auto;
+			}
+		}
     `;
 
     // Generate Button Component
