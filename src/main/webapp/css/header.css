@@ -1,0 +1,314 @@
+/* #header */
+#header {
+	background-color: var(--main-white);
+	width: 100%;
+	position: fixed;
+	z-index: 9;
+	box-shadow: 0px 10px 20px rgba(0,0,0,0.2);
+}
+#header .center {
+	padding: 5px 16px 0;
+	max-width: 1440px;
+	width: auto;
+}
+#header .center .top {
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	align-content: center;
+}
+#header .center .top .left {
+	display: block;
+	width: 100%;
+}
+#header .center .top .left .logo {
+	display: block;
+	width: 165px;
+	height: 60px;
+}
+#header .center .top .left .logo a {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+}
+#header .center .top .left .logo a img {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+#header .center .top .right {
+	width: 100%;
+}
+#header .center .top .right .utils {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	gap: 24px;
+	justify-content: flex-end;
+	align-items: center;	
+}
+#header .center .bottom {
+	width: 100%;
+	height: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	position: relative;
+}
+#header .center .bottom .mainMenu.wide {
+/* 	width: calc(100% - 60px); */
+	width: calc(100% - 120px);
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+  position: relative;
+}
+#header .center .bottom .mainMenu.wide > li {
+	width: 100%;
+	height: 100%;
+	line-height: 60px;
+	text-align: center;
+	position: relative;
+	min-width: 190px;
+}
+#header .center .bottom .mainMenu.wide > li:hover {
+	background-color: var(--main-red);
+	
+}
+#header .center .bottom .mainMenu.wide > li:hover > a {
+	color: var(--main-white);
+}
+#header .center .bottom .mainMenu.wide > li:hover > .subMenu {
+	background-color: var(--main-red);
+}
+#header .center .bottom .mainMenu.wide > li:hover > .subMenu a {
+	color: var(--main-white);	
+}
+#header .center .bottom .mainMenu.wide > li > a {
+	display: block;
+	height: 100%;
+	font-size: 32px;
+	font-weight: bold;
+}
+#header .center .bottom .mainMenu.wide > li > .subMenu {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 60px;
+  z-index: 10;
+	width: 100%;
+	height: 200px;
+	padding: 16px;
+  background-color: var(--main-white);
+/*   background-color: red; */
+}
+#header .center .bottom .mainMenu.wide > li > .subMenu > li {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	margin-bottom: 12px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+#header .center .bottom .mainMenu.wide > li > .subMenu > li:last-child {
+	margin-bottom: 0;
+}
+#header .center .bottom .mainMenu.wide > li > .subMenu > li:hover {
+	opacity: 0.6;
+}
+#header .center .bottom .mainMenu.wide > li > .subMenu > li > a {
+	display: block;
+	font-size: 24px;
+	font-weight: normal;
+	height: 32px;
+	line-height: 32px;
+	position: relative;
+}
+#header .center .bottom .search {
+	padding: 8px;
+	height: 100%;
+	position: absolute;
+	right: 0;
+}
+#header .center .bottom .search#menu {
+	display: none;
+	left: 0;
+}
+#header .center .bottom .search .icon {
+	display: inline-block;
+	width: 44px;
+	height: 44px;
+	background: url('../image/icon/search.png') no-repeat center/cover;
+	background-size: 28px 28px;
+	border: 0px;
+	cursor : pointer;
+	transition: all 0.3s;
+}
+#header .center .bottom .search .menu {
+	display: inline-block;
+	width: 44px;
+	height: 44px;
+	background: url('../image/icon/menu.png') no-repeat center/cover;
+	background-size: 28px 28px;
+	border: 0px;
+	cursor : pointer;
+	transition: all 0.3s;
+}
+#header .center .bottom .search .icon:active {
+	transform: scale(0.9);
+}
+#header .center .bottom .navibg.wide {
+  width: 100vw;
+	height: 0px;
+  background-color: var(--main-white);
+  position: absolute;
+  top: 60px;
+  z-index: 9;
+  border-radius: 0 0 40px 40px;
+}
+#header .center .bottom .searchArea {
+/* 	display:none; */
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0,0,0, 0.6);
+	position: fixed;
+	left: 0;
+	top: 0;
+}
+#header .center .bottom .searchArea .container {
+	width: 100%;
+	height: 325px;
+	background-color: var(--main-white);
+	border-radius: 0 0 40px 40px;
+}
+#header .center .bottom .searchArea .container .grouper {
+	width: 60%;
+	height: 100%;
+	padding: 16px 0;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 24px;
+}
+#header .center .bottom .searchArea .container .grouper .inputArea {
+	display: flex;
+}
+#header .center .bottom .searchArea .container .grouper .inputArea .searchInput {
+	display: inline-block;
+	width: 100%;
+	padding: 4px;
+}
+#header .center .bottom .searchArea .container .grouper .inputArea .searchIcon {
+	display: inline-block;
+	width: 44px;
+	height: 44px;
+	background: url('../image/icon/search.png') no-repeat center/cover;
+	background-size: 28px 28px;
+	border: 0px;
+	cursor : pointer;
+	transition: all 0.3s;
+}
+#header .center .bottom .searchArea .container .grouper .inputArea .searchIcon:hover {
+	opacity: 0.6;
+}
+#header .center .bottom .searchArea .container .grouper .inputArea .searchIcon:active {
+	transform: scale(0.9);
+}
+#header .center .bottom .searchArea .container .grouper .indicator {
+	width: auto;
+	display: inline-block;
+	padding: 8px;
+	border-radius: 50px;
+	background-color: var(--main-red);
+	color: var(--main-white);
+	font-weight: bold;
+	flex-grow: 0;
+	align-self: flex-start;
+	margin-bottom: 8px;
+}
+#header .center .bottom .searchArea .container .grouper .trendingList {
+	display: flex;
+	gap: 8px;
+	flex-wrap: wrap;
+	width: 100%;
+}
+#header .center .bottom .searchArea .container .grouper .trendingList .trendingItem {
+	display:block;
+	padding: 8px;
+	border-radius: 20px;
+	border: 1px solid var(--main-black);
+	color: var(--main-black);
+}
+
+
+#menu {
+	position: relative;
+}
+.accordion {
+	height: auto;
+	display: none;
+}
+.accordion > li {
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+	padding: 8px;
+	background-color: var(--main-white);
+}
+.accordion li > .accordion-btn {
+	display: block;
+	background-color: var(--main-white);
+	cursor: pointer;
+	width: 100%;
+	text-align: center;
+	transition: background-color 0.4s ease;
+	font-size: 32px;
+	font-weight: bold;
+	position: relative;
+	left: 0;
+	top: 0;
+}
+.accordion .accordion-btn:hover {
+	background-color: var(--main-red);
+	color: var(--main-white);
+}
+.accordion .subMenu {
+	display: none;
+	
+}
+.accordion .subMenu > li {
+	width: 100%;
+}
+.accordion .subMenu > li > a {
+	display: block;
+	color: var(--main-black);
+	text-align: center;
+	font-size: 24px;
+	font-weight: normal;
+}
+
+.accordion .subMenu a:hover {
+	background-color: var(--main-red);
+	color: var(--main-white);
+}
+
+
+
+
+@media screen and (max-width: 1440px) {
+	#header .center .bottom .mainMenu.wide > li {
+		min-width: 170px;
+	}
+}
+@media screen and (max-width: 1190px) {
+	#header .center .bottom .mainMenu.wide {
+		display: none;
+	}
+	#header .center .bottom .search#menu {
+		display: inline-block;
+	}
+}

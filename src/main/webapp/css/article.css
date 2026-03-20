@@ -1,0 +1,305 @@
+/* article */
+#article {
+	flex-grow: 1;
+	flex-shrink: 1;
+	background: linear-gradient(60deg,  var(--main-whiteSmoke) 0%, var(--main-whiteSmoke) 20%, var(--main-white) 60%, var(--main-whisper) 100%);
+	border: 1px ridge rgba(211, 211, 211, 1);
+	height: auto;
+}
+/* header */
+#article > .header {
+	width: 100%;
+	height: 120px;
+	padding: 0 16px;
+	background: linear-gradient(to right,  transparent 0%, transparent 40%, rgba(164, 97, 113, 0.2) 80%, rgba(164, 97, 113, 0.2) 100%);
+	border-bottom: 4px ridge rgba(164, 97, 113, 0.2);
+}
+#article > .header .navigator {
+	width: 100%;
+	height: 35%;
+}
+#article > .header .navigator .menu {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-end;
+	gap: 24px;
+}
+#article > .header .navigator .menu > li {
+	position: relative;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+#article > .header .navigator .menu > li:after {
+	content: '';
+	width: 16px;
+	height: 16px;
+	background: url("../image/icon/chevron-right.png") no-repeat center/cover;
+	position: absolute;
+	left: 100%;
+	top: 50%;
+	transform: translate(15%, -50%);
+}
+#article > .header .sharing {
+	width: 100%;
+	height: 65%;
+	position: relative;
+}#article > .header .sharing .sharingList {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	gap: 16px;
+}
+#article > .header .sharing .sharingList .sharingItem {
+	cursor: pointer;
+	transition: all 0.3s;
+}
+#article > .header .sharing .sharingList .sharingItem:hover {
+	opacity: 0.6;
+}
+#article > .header .sharing .sharingList .sharingItem:active {
+	transform: scale(0.9);
+}
+
+/* content */
+#article > .content {
+	width: 100%;
+	padding: 32px 16px;
+}
+#article > .content .contentArea {
+	width: 100%;
+	margin-bottom: 24px;
+}
+#article > .content .contentArea:last-child {
+	margin-bottom: 0px;
+}
+#article > .content .contentArea .contentTitle {
+	font-weight: bold;
+	padding: 8px 0;
+}
+#article > .content .contentArea .contentTitle > span {
+	position: relative;
+	padding: 0 32px;
+}
+#article > .content .contentArea .contentTitle > span:before {
+	content: '';
+	background: url("../image/icon/feather.png") no-repeat center/cover;
+	width: 24px;
+	height: 24px;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+#article > .content .contentArea .contentPlot.bordered {
+	border: 1px ridge rgba(211, 211, 211, 1);
+}
+#article > .content .contentArea .contentPlot.indented {
+	padding: 0 40px;
+}
+#article > .content .contentArea .contentPlot .frmSearchBook {
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: stretch;
+	position: relative;
+}
+#article > .content .contentArea .contentPlot .frmSearchBook .filterList {
+	flex-grow: 1;
+	flex-shrink: 1;
+}
+#article > .content .contentArea .contentPlot .frmSearchBook .filterList .filterItem {
+	width: 100%;
+	border: 1px ridge rgba(211, 211, 211, 1);
+	padding: 4px 0;
+	display: flex;
+	justify-content: flex-start;
+	align-items: stretch;
+	gap: 4px;
+}
+#article > .content .contentArea .contentPlot .frmSearchBook .filterList .filterItem > label {
+	width: 200px;
+	display: block;
+	padding-right: 16px;
+	text-align: right;
+	flex-grow: 0;
+	flex-shrink: 0;
+	background-color: var(--main-whiteSmoke);
+}
+#article > .content .contentArea .contentPlot .frmSearchBook .filterList .filterItem > *:not(label) {
+	flex-grow: 1;
+	flex-shrink: 1;
+}
+#article > .content .contentArea .contentPlot .frmSearchBook .buttons {
+	width: 160px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+	flex-grow: 0;
+	flex-shrink: 0;
+	border: 1px ridge rgba(211, 211, 211, 1);
+	padding: 4px;
+}
+#article > .content .contentArea .contentPlot .frmSearchBook .buttons > input {
+	display: block;
+	width: 100%;
+	flex-grow: 1;
+	font-size: 16px;
+	font-weight: normal;
+	color: var(--main-black);
+}
+#article > .content .contentArea .contentPlot .frmSearchBook .buttons > input.reset {
+	background: linear-gradient(45deg, transparent 0%, transparent 20%, rgba(152, 251, 152, 0.2) 80%, rgba(152, 251, 152, 0.2) 100%);
+	border: 1px outset var(--main-darkSeaGreen);
+}
+#article > .content .contentArea .contentPlot .frmSearchBook .buttons > input.reset:active {
+	background: rgba(152, 251, 152, 0.2);
+}
+#article > .content .contentArea .contentPlot .frmSearchBook .buttons > input.submit {
+	background: linear-gradient(45deg, transparent 0%, transparent 20%, rgba(164, 97, 113, 0.2) 80%, rgba(164, 97, 113, 0.2) 100%);
+	border: 1px outset var(--main-dustyRose); 
+}
+#article > .content .contentArea .contentPlot .frmSearchBook .buttons > input.submit:active {
+	background: rgba(164, 97, 113, 0.2);
+}
+
+
+/* controller */
+.controller {
+	width: 100%;
+	border-top: 3px ridge rgba(164, 97, 113, 0.2);
+	border-bottom: 3px ridge rgba(164, 97, 113, 0.2);
+	clear: both;
+	overflow: hidden;
+	padding: 4px 8px;
+}
+.controller .info {
+	float: left;
+}
+.controller .operator {
+	float: right;
+}
+.controller .operator .operatorList {
+	width: 100%;
+}
+.controller .operator .operatorList .operatorItem {
+	display: inline-block;
+	cursor: pointer;
+	transition: all 0.3s;
+	margin-right: 16px;
+}
+.controller .operator .operatorList .operatorItem:last-child {
+	margin-right: 0;
+}
+.controller .operator .operatorList .operatorItem:hover {
+	opacity: 0.6;
+}
+.controller .operator .operatorList .operatorItem:active {
+	transform: scale(0.9);
+}
+
+
+/* bookList */
+.bookList.searchBook.grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 16px;
+}
+.bookList.searchBook.grid .bookItem {
+	justify-content: space-evenly;
+	gap: 16px;
+	border:  1px ridge rgba(211, 211, 211, 1);
+	position: relative;
+}
+.bookList.searchBook.grid .bookItem > * {
+	width: auto;
+}
+.bookList.searchBook.grid .bookItem .imageArea {
+	width: 167px;
+}
+.bookList.searchBook.grid .bookItem .detailArea {
+	justify-content: center;
+	flex-direction: column;
+}
+.bookList.searchBook.grid .bookItem .detailArea .detailList {
+	display: block;
+	flex-grow: 0;
+	flex-shrink: 0;
+	width: 100%;
+	max-height: 215px;
+	overflow: hidden;
+	padding: 8px 0;
+}
+.bookList.searchBook.grid .bookItem .detailArea .detailList > li > label {
+	padding: 0 4px;
+}
+.bookList.searchBook.grid .bookItem .detailArea .detailList > li > label:after {
+	right: -8px;
+}
+.bookList.searchBook.grid .bookItem .detailArea .detailList > li > span {
+	margin-left: 8px;
+}
+.bookList.searchBook.grid .bookItem .detailArea .buttons {
+	width: 120px;
+	height: auto;
+}
+
+
+/* paging */
+#article .paging {
+	width: 100%;
+	padding: 8px 0;
+}
+#article .paging .pageList {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	gap: 16px;
+}
+#article .paging .pageList .pageItem {
+	font-size: 20px;
+}
+#article .paging .pageList .pageItem.selected a {
+	color: var(--main-dustyRose);
+}
+
+
+
+@media screen and (max-width: 1440px) {
+	#article {
+		flex-grow: 0;
+		flex-shrink: 0;
+		width: 96%;
+		display: block;
+		margin: 0 auto;
+	}
+	#article > .content .contentArea .contentPlot.indented {
+		padding: 0;
+	}
+	#article > .content .contentArea .contentPlot .frmSearchBook .filterList .filterItem > label {
+		width: 90px;
+		padding-right: 8px;
+		font-size: 12px;
+	}
+	#article > .content .contentArea .contentPlot .frmSearchBook .filterList .filterItem > *:not(label) {
+		flex-grow: 1;
+		flex-shrink: 1;
+	}
+	#article > .content .contentArea .contentPlot .frmSearchBook .buttons {
+		width: 90px;
+		display: flex;
+	}
+}
+@media screen and (max-width: 770px) {
+	.bookList.searchBook.grid {
+		grid-template-columns: repeat(1, 1fr);
+	}
+	.bookList.searchBook.grid .bookItem .detailArea .detailList {
+		padding: 0;
+	}
+}
