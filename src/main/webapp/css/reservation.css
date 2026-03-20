@@ -9,15 +9,21 @@
 /* reservation */
 #background .cover .center .container {
 	width: 90%;
+	height:82vh;
 	background: var(--main-white);
 	border-radius: 24px;
-	overflow: hidden;
+	overflow-y: scroll;
 	display: flex;
 	flex-direction: column;
 	position: absolute;
 	left: 50%;
 	top: calc(50% + (var(--height-header) / 2));
 	transform: translate(-50%, -50%);
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+#background .cover .center .container::-webkit-scrollbar {
+	display: none;
 }
 #background .cover .center .container .title {
 	background-color: var(--main-red);

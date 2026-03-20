@@ -1,5 +1,4 @@
 /* background */
-
 #background {
 	background: url("../image/background/centre/bg_centre03.jpg") no-repeat center/cover;
 }
@@ -8,21 +7,18 @@
 }
 
 /* join */
-#background .cover .center {
-	position:relative;
-}
 #background .cover .center .container {
 	width: 90%;
 	height:82vh;
 	background: var(--main-white);
 	border-radius: 24px;
+	overflow-y: scroll;
 	display: flex;
 	flex-direction: column;
 	position: absolute;
 	left: 50%;
 	top: calc(50% + (var(--height-header) / 2));
 	transform: translate(-50%, -50%);
-	overflow-y: scroll;
 	-ms-overflow-style: none;
 	scrollbar-width: none;
 }

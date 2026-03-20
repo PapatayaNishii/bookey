@@ -139,7 +139,7 @@ public class UserController extends HttpServlet {
 						List<String> userList = new ArrayList<String>(userSet);
 						context.setAttribute("userList", userList);
 						
-						if(rawRedirectPage != null) {
+						if(rawRedirectPage != null && !rawRedirectPage.equals("/jsp/user/join.jsp")){
 							String redirectPage = rawRedirectPage.toString();
 							response.sendRedirect(request.getContextPath()+redirectPage);
 						}else {
