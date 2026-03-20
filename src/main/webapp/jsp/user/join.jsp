@@ -68,7 +68,7 @@
 											<ul class="answer">
 												<li>
 													<input type="email" name="userEmail" id="userEmail" placeholder="Input your Email" required="required">
-													<input type="button" name="sendAuthentication" id="sendAuthentication" value="Send an Authentication number">												
+													<input type="button" name="sendAuthentication" id="sendAuthentication" value="Authenticate">												
 												</li>
 												<li>
 													<span>a Authentication Number</span>

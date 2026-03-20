@@ -1,6 +1,6 @@
 🛠️ Bookey Project Environment Setup Guide
 
-Step 1: Terminal Setup and Git Clone in Eclipse
+■Step 1: Terminal Setup and Git Clone in Eclipse
 Follow these steps to fetch the source code using the internal terminal in Eclipse.
 
  1. Open Terminal: Go to Window > Show View > Other... > Terminal.
@@ -19,7 +19,7 @@ Follow these steps to fetch the source code using the internal terminal in Eclip
 
   A. Run: git clone https://github.com/beenjh6088/bookey.git
 
-Step 2: Project Import and Server Deployment
+■Step 2: Project Import and Server Deployment
 Import the cloned source into Eclipse and register it with the Tomcat server.
 
  1. Import Project: Right-click in Project Explorer > Import... > Existing Projects into Workspace and select the bookey folder.
@@ -30,7 +30,7 @@ Import the cloned source into Eclipse and register it with the Tomcat server.
 
  4. Configure Path: Double-click Tomcat in the Servers tab > Go to the Modules tab at the bottom > Select bookey, click Edit, and change the Path to /.
 
-Step 3: Database Connection Pool (JNDI) Configuration
+■Step 3: Database Connection Pool (JNDI) Configuration
 Configure the Oracle database connection details for the DAO.
 
  1. Open Configuration: Open the context.xml file located in the Servers project.
@@ -47,3 +47,18 @@ Configure the Oracle database connection details for the DAO.
           maxActive="20"
           maxIdle="10"
           maxWait="-1"/>
+
+■Setp 4: Syncronize with your git repository
+rm -rf ./.git
+
+git init
+
+git config --global user.name Papataya
+
+git config --global user.email beenjh6088@gmail.com
+
+git add .
+
+git commit -m 'Commit Message'
+
+git push origin master

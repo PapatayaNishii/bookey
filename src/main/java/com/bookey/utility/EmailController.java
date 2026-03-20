@@ -12,7 +12,8 @@ import javax.mail.internet.MimeMessage;
 
 public class EmailController {
 	private static String fromID = "beenjh6088@gmail.com";
-	private static String fromPW = "dshfgmijtuaqodgh";
+//	private static String fromPW = "dshfgmijtuaqodgh";
+	private static String fromPW = "ibbkttzdmnxijugv";
 	
 	public static void sendForEmail(String to, int randomNumber) {
 		// Setting a SMTP server information

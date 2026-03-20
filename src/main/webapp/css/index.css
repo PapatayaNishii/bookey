@@ -475,4 +475,21 @@
 	#background .frequent .cover .center .shortcutList .shortcutItem .text {
 		font-size: 16px;
 	}
+	#background .frequent {
+		display:none;
+	}
+
+	#background .cover .grouper > .bottom .utils > .top > .right {
+		padding:10px 16px;
+	}
+	#background .cover .grouper > .bottom .utils > .top > .right .trending .trendingList .trendingItem a {
+		font-size: 16px;
+	}
+	#centre .center .top > h1 {
+		opacity:0;
+	}
+	#centre .center .top > h2 {
+		height:20px;
+		opacity:0;
+	}
 }
