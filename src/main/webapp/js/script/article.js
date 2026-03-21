@@ -72,6 +72,7 @@ function event_component_act_article() {
 		event.preventDefault();
 		PAGENUM = 1;
 		search_data("frmSearchBook");
+		getAllKeyword();
 	})
 	
 	if(fileName.includes("searchBooks")) {
@@ -319,7 +320,7 @@ function search_data(frm) {
 				let bookTotalAmount = JSON.parse(data).bookTotalAmount || 0;
 				let userID = $("#userID")[0].value;
 				
-				console.log(bookList);
+//				console.log(bookList);
 //				console.log(pageList);
 				if(bookList.length == 0){
 					alert("There is no Book. \nPlease search it again with other conditions.")
@@ -396,6 +397,7 @@ function search_data(frm) {
 					li.appendChild(a);
 					articlePageList.appendChild(li);
 				}
+				getAllKeyword();
 			}
 		})
 }
