@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
+import com.bookey.keyword.KeywordService;
 import com.bookey.utility.UtilityController;
 
 @WebServlet("/book/*")
@@ -26,6 +27,7 @@ public class BookController extends HttpServlet {
 	 */
 	private static final long serialVersionUID = -8318923147672226562L;
 	private BookService bookService;
+	private KeywordService keywordService;
 	private static final BookController book = new BookController();
 	private StringBuilder nextPage = new StringBuilder("");
 	private ServletContext context;
@@ -42,6 +44,7 @@ public class BookController extends HttpServlet {
 	public void init() throws ServletException {
 		// TODO Auto-generated method stub
 		bookService = new BookService();
+		keywordService = new KeywordService();
 		context = getServletContext();
 	}
 	
@@ -98,6 +101,10 @@ public class BookController extends HttpServlet {
 				int bookTotalAmount = bookService.getBookTotalAmount(paramMap);
 				JSONArray bookList = bookService.searchBooks(paramMap);
 				JSONArray pageList = bookService.getPageList(paramMap);
+				String bookNM = paramMap.get("BOOKNM").toString();
+				if(!bookNM.equals("")) {
+				  int accumulateKeyword = keywordService.accumulateKeyword(bookList);
+				}
 				JSONObject resultMap = new JSONObject();
 				resultMap.put("bookTotalAmount", bookTotalAmount);
 				resultMap.put("bookList", bookList);
