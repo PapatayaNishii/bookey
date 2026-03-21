@@ -1,5 +1,5 @@
 🛠️ Bookey Project Environment Setup Guide
-
+--------------------------------------------------------------------------------------------------------------------------------
 ■Step 1: Terminal Setup and Git Clone in Eclipse
 Follow these steps to fetch the source code using the internal terminal in Eclipse.
 
@@ -18,7 +18,7 @@ Follow these steps to fetch the source code using the internal terminal in Eclip
  5. Clone Project: Use the URL from the Bookey GitHub repository.
 
   A. Run: git clone https://github.com/beenjh6088/bookey.git
-
+--------------------------------------------------------------------------------------------------------------------------------
 ■Step 2: Project Import and Server Deployment
 Import the cloned source into Eclipse and register it with the Tomcat server.
 
@@ -29,7 +29,7 @@ Import the cloned source into Eclipse and register it with the Tomcat server.
  3. Register App: Select bookey from the left list and move it to the right (Configured).
 
  4. Configure Path: Double-click Tomcat in the Servers tab > Go to the Modules tab at the bottom > Select bookey, click Edit, and change the Path to /.
-
+--------------------------------------------------------------------------------------------------------------------------------
 ■Step 3: Database Connection Pool (JNDI) Configuration
 Configure the Oracle database connection details for the DAO.
 
@@ -47,8 +47,8 @@ Configure the Oracle database connection details for the DAO.
           maxActive="20"
           maxIdle="10"
           maxWait="-1"/>
-
-■Setp 4: Syncronize with your git repository
+--------------------------------------------------------------------------------------------------------------------------------
+■Step 4: Syncronize with your git repository
 rm -rf ./.git
 
 git init
@@ -62,3 +62,24 @@ git add .
 git commit -m 'Commit Message'
 
 git push origin master
+--------------------------------------------------------------------------------------------------------------------------------
+■Step 5: Add .gitignore bellow texts
+# Java
+*.class
+
+# Eclipse
+.settings/
+.metadata/
+.project
+.classpath
+bin/
+
+# Server & Build
+Servers/
+target/
+*.log
+
+# OS
+Thumbs.db
+.DS_Store
+--------------------------------------------------------------------------------------------------------------------------------
