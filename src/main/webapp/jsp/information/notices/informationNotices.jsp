@@ -10,7 +10,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Insert title here</title>
+	<title>Bookey</title>
 	<link rel="stylesheet" href="${contextPath }/css/common.css" type="text/css">
 	<link rel="stylesheet" href="${contextPath }/css/header.css" type="text/css">
 	<link rel="stylesheet" href="${contextPath }/css/footer.css" type="text/css">
