@@ -20,11 +20,24 @@
 					<bky-rounded-button icon="${contextPath }/image/icon/plus-square.png" label="Join" class="join"></bky-rounded-button>					
 			<%		
 				} else {
+					String rank = userVO.getRank();
+					if(rank.equals("A")) {
 			%>
-					<bky-rounded-button icon="${contextPath }/image/icon/book.png" label=CheckOut class="checkout"></bky-rounded-button>
-					<bky-rounded-button icon="${contextPath }/image/icon/flag.png" label="Reservation" class="reservation"></bky-rounded-button>
-					<bky-rounded-button icon="${contextPath }/image/icon/log-out.png" label="Logout" class="logout"></bky-rounded-button>
-					<bky-rounded-button icon="${contextPath }/image/icon/edit.png" label="Update" class="update"></bky-rounded-button>			
+						<bky-rounded-button icon="${contextPath }/image/icon/stamp.svg" label=Role class="role"></bky-rounded-button>
+						<bky-rounded-button icon="${contextPath }/image/icon/book.png" label=CheckOut class="checkout"></bky-rounded-button>
+						<bky-rounded-button icon="${contextPath }/image/icon/flag.png" label="Reservation" class="reservation"></bky-rounded-button>
+						<bky-rounded-button icon="${contextPath }/image/icon/log-out.png" label="Logout" class="logout"></bky-rounded-button>
+						<bky-rounded-button icon="${contextPath }/image/icon/edit.png" label="Update" class="update"></bky-rounded-button>			
+			<%
+					}else if(rank.equals("R")){
+			%>
+						<bky-rounded-button icon="${contextPath }/image/icon/book.png" label=CheckOut class="checkout"></bky-rounded-button>
+						<bky-rounded-button icon="${contextPath }/image/icon/flag.png" label="Reservation" class="reservation"></bky-rounded-button>
+						<bky-rounded-button icon="${contextPath }/image/icon/log-out.png" label="Logout" class="logout"></bky-rounded-button>
+						<bky-rounded-button icon="${contextPath }/image/icon/edit.png" label="Update" class="update"></bky-rounded-button>			
+			<%
+					}
+			%>
 			<%
 				}
 			%>
@@ -56,7 +69,7 @@
 				</ul>
 			</li>
 			<li>
-				<a href="javascript:;">Introduction</a>
+				<a href="javascript:;">Overview</a>
 				<ul class="subMenu">
 					<li><a href="#">Greeting</a></li>
 					<li><a href="#">Organization</a></li>
@@ -73,7 +86,7 @@
 				</ul>
 			</li>
 			<li>
-				<a href="javascript:;">Information</a>
+				<a href="javascript:;">Support</a>
 				<ul class="subMenu">
 					<li><a href="#">Questions</a></li>
 					<li><a href="#">Notices</a></li>
@@ -107,7 +120,7 @@
 					</ul>
 				</li>
 				<li>
-					<a href="javascript:;" class="accordion-btn">Introduction</a>
+					<a href="javascript:;" class="accordion-btn">Overview</a>
 					<ul class="subMenu">
 						<li><a href="#">Greeting</a></li>
 						<li><a href="#">Organization</a></li>
@@ -124,7 +137,7 @@
 					</ul>
 				</li>
 				<li>
-					<a href="javascript:;" class="accordion-btn">Information</a>
+					<a href="javascript:;" class="accordion-btn">Support</a>
 					<ul class="subMenu">
 						<li><a href="#">Questions</a></li>
 						<li><a href="#">Notices</a></li>

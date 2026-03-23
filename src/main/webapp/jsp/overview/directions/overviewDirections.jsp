@@ -44,8 +44,8 @@
 				<div class="main">
 					<div class="cover">
 						<div class="center">
-							<jsp:include page="/jsp/introduction/directions/aside.jsp"></jsp:include>
-							<jsp:include page="/jsp/introduction/directions/article.jsp"></jsp:include>
+							<jsp:include page="/jsp/overview/directions/aside.jsp"></jsp:include>
+							<jsp:include page="/jsp/overview/directions/article.jsp"></jsp:include>
 						</div>
 					</div>
 				</div>
