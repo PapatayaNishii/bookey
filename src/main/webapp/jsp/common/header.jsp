@@ -36,6 +36,13 @@
 						<bky-rounded-button icon="${contextPath }/image/icon/log-out.png" label="Logout" class="logout"></bky-rounded-button>
 						<bky-rounded-button icon="${contextPath }/image/icon/edit.png" label="Update" class="update"></bky-rounded-button>			
 			<%
+					}else if(rank.equals("M")){
+			%>
+						<bky-rounded-button icon="${contextPath }/image/icon/book.png" label=CheckOut class="checkout"></bky-rounded-button>
+						<bky-rounded-button icon="${contextPath }/image/icon/flag.png" label="Reservation" class="reservation"></bky-rounded-button>
+						<bky-rounded-button icon="${contextPath }/image/icon/log-out.png" label="Logout" class="logout"></bky-rounded-button>
+						<bky-rounded-button icon="${contextPath }/image/icon/edit.png" label="Update" class="update"></bky-rounded-button>			
+			<%
 					}
 			%>
 			<%

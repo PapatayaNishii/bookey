@@ -1,5 +1,7 @@
 package com.bookey.user;
 
+import org.json.simple.JSONArray;
+
 public class UserService {
 
 	private UserDAO userDAO;
@@ -24,5 +26,9 @@ public class UserService {
 			userVO = userDAO.findUser(userID, userPW);
 		}
 		return userVO;
+	}
+	
+	public JSONArray loadAllUsers() {
+	  return userDAO.selectAllUser();
 	}
 }

@@ -8,6 +8,9 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
 public class UserDAO {
 	private Connection conn;
 	private PreparedStatement pstmt;
@@ -155,5 +158,36 @@ public class UserDAO {
 			e.printStackTrace();
 		}
 		return userVO;
+	}
+	
+	public JSONArray selectAllUser() {
+    JSONArray userList = new JSONArray();
+    try {
+      conn = dataFactory.getConnection();
+      String query = "SELECT * FROM TBL_USER";
+      pstmt = conn.prepareStatement(query);
+      ResultSet rs = pstmt.executeQuery();
+      while (rs.next()) {
+        JSONObject user = new JSONObject();
+        user.put("USERID", rs.getString("USERID"));
+        user.put("USERPW", rs.getString("USERPW"));
+        user.put("EMAIL", rs.getString("EMAIL"));
+        user.put("NAME", rs.getString("NAME"));
+        user.put("ADDRESS", rs.getString("ADDRESS"));
+        user.put("IS_OPEN_TO_MARKETING", rs.getString("IS_OPEN_TO_MARKETING"));
+        user.put("BIRTHDAY", rs.getString("BIRTHDAY"));
+        user.put("GENDER", rs.getString("GENDER"));
+        user.put("RANK", rs.getString("RANK"));
+        user.put("AUTHNUM", rs.getString("AUTHNUM"));
+        userList.add(user);
+      }
+      rs.close();
+      pstmt.close();
+      conn.close();
+    } catch (Exception e) {
+      // TODO: handle exception
+      e.printStackTrace();
+    }
+    return userList;
 	}
 }

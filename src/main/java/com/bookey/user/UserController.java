@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import com.bookey.utility.EmailController;
@@ -179,6 +180,14 @@ public class UserController extends HttpServlet {
 				// the Reason why i use sendRedirect is to block requesting by user's mistake. if not, session overflow with same process(/user/loginUser.do)
 				response.sendRedirect(request.getContextPath()+"/");
 				return;
+			}else if(action.equals("/loadAllUsers.do")) {
+        JSONObject resultMap = new JSONObject();
+        JSONArray userList = userService.loadAllUsers();
+        resultMap.put("userList", userList);
+        String strResultMap = resultMap.toJSONString();
+        System.out.println(strResultMap);
+        pw.print(strResultMap);
+        return;
 			}
 			
 			RequestDispatcher dispatcher = request.getRequestDispatcher(nextPage.toString());

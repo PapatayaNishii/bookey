@@ -77,6 +77,9 @@ function event_href_direct() {
 	$("#header bky-rounded-button.reservation").click(function() {
 		location.href = `${rootURL}/jsp/user/reservation.jsp`;
 	})
+	$("#header bky-rounded-button.role").click(function() {
+		location.href = `${rootURL}/jsp/user/role.jsp`;
+	})
 	
 	// setting links for all menus
 	$("#header .bottom .mainMenu > li > a").each(function(idx, obj) {
