@@ -4,7 +4,8 @@
 <%
 	request.setCharacterEncoding("utf-8");
 %>
-<c:set var="userVO" value="${sessionScope.userVO}"></c:set>
+<c:set var="userList" value="${applicationScope.userList}"></c:set>
+<%-- <c:set var="userVO" value="${sessionScope.userVO}"></c:set>  --%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +14,7 @@
 	<link rel="stylesheet" href="${contextPath }/css/common.css" type="text/css">
 	<link rel="stylesheet" href="${contextPath }/css/header.css" type="text/css">
 	<link rel="stylesheet" href="${contextPath }/css/footer.css" type="text/css">
-	<link rel="stylesheet" href="${contextPath }/css/checkout.css" type="text/css">
+	<link rel="stylesheet" href="${contextPath }/css/role.css" type="text/css">
 	<link rel="icon" href="${contextPath }/favicon.ico" type="image/x-icon">
 	<script type="text/javascript" src="${contextPath }/js/jquery/jquery-3.7.1.min.js"></script>
 	<script defer src="${contextPath }/js/class/RoundedButton.js"></script>
@@ -46,8 +47,12 @@
 								<form class="frmUnderline frmRole" method="post" name="frmRole" action="${contextPath }/user/.do">
 									<input type='hidden' name='userID' value='${userVO.getUserID() }' id="userID"/>
 									<ul class="dataList">
-<%-- 										<li class="dataItem"><bky-item-i1f4b1 class="bookItem" src="${contextPath }/image/book/JAVA.jpg" bookNM="JAVA" rentalDate="2019-01-01" dueDate="2019-02-10" rentalValue="ongoing" buttonValue="Return" bookID="A0000001" userID="qwer"></bky-item-i1f4b1></li> --%>
+<!-- 										supposed to be made with vanilla js in a dynamic way -->
 									</ul>
+									<div class="buttons">
+										<input type="button" value="Reset" class="reset" onclick="event_component_act_reset()"/>
+										<input type="button" value="Submit" class="submit" onclick="event_component_act_submit()"/>
+									</div>
 								</form>
 							</div>
 						</div>

@@ -6,6 +6,7 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import javax.servlet.RequestDispatcher;
@@ -23,6 +24,7 @@ import org.json.simple.JSONObject;
 
 import com.bookey.utility.EmailController;
 import com.bookey.utility.UtilityController;
+import com.fasterxml.jackson.core.JsonParser;
 
 @WebServlet("/user/*")
 public class UserController extends HttpServlet {
@@ -50,7 +52,7 @@ public class UserController extends HttpServlet {
 		userService = new UserService();
 		emailController = new EmailController();
 		context = getServletContext();
-		List<String> userList = new ArrayList<>();
+		List<UserVO> userList = new ArrayList<>();
 		context.setAttribute("userList", userList);
 	}
 	
@@ -133,11 +135,11 @@ public class UserController extends HttpServlet {
 				if(userVO != null) {
 					// Login process completed Successfully
 						session.setAttribute("userVO", userVO);
-						List<String> rawUserList = (ArrayList<String>) context.getAttribute("userList");
-						rawUserList.add(userVO.getUserID());
+						List<UserVO> rawUserList = (ArrayList<UserVO>) context.getAttribute("userList");
+						rawUserList.add(userVO);
 						// remove the duplication of userID
-						Set<String> userSet = new HashSet<String>(rawUserList);
-						List<String> userList = new ArrayList<String>(userSet);
+						Set<UserVO> userSet = new HashSet<UserVO>(rawUserList);
+						List<UserVO> userList = new ArrayList<UserVO>(userSet);
 						context.setAttribute("userList", userList);
 						
 						if(rawRedirectPage != null && !rawRedirectPage.equals("/jsp/user/join.jsp")){
@@ -160,8 +162,8 @@ public class UserController extends HttpServlet {
 				HttpSession session = request.getSession(false);
 				if(session != null) {
 					UserVO userVO = (UserVO)session.getAttribute("userVO");
-					List<String> userList = (ArrayList<String>) context.getAttribute("userList");
-					if(userVO!=null) userList.remove(userVO.getUserID());
+					List<UserVO> userList = (ArrayList<UserVO>) context.getAttribute("userList");
+					if(userVO!=null) userList.remove(userVO);
 					session.invalidate();
 				}
 				Cookie[] cookies = request.getCookies();
@@ -187,6 +189,22 @@ public class UserController extends HttpServlet {
         String strResultMap = resultMap.toJSONString();
         System.out.println(strResultMap);
         pw.print(strResultMap);
+        return;
+			}else if(action.equals("/loadAllRanks.do")) {
+        JSONObject resultMap = new JSONObject();
+        JSONArray rankList = userService.loadAllRanks();
+        resultMap.put("rankList", rankList);
+        String strResultMap = resultMap.toJSONString();
+        System.out.println(strResultMap);
+        pw.print(strResultMap);
+        return;
+			}else if(action.equals("/changeRole.do")) {
+        Map<String, Object> requestParm = UtilityController.getParameterMap(request);
+        String strFrmData = requestParm.get("frmData").toString();
+        JSONArray jsonArr = (JSONArray) UtilityController.jsonParser.parse(strFrmData);
+        System.out.println(strFrmData);
+        int resultInt = userService.changeRank(jsonArr);
+        pw.print(resultInt);
         return;
 			}
 			

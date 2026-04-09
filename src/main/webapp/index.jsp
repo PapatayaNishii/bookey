@@ -30,7 +30,7 @@
   		initIndexEvent();
   		initCommonEvent();
   		initLoginEvent();
-//   		console.log(`${userList}`)
+  		console.log(`${userList}`)
 //   		console.log(`${userVO.getUserID()}`)
 //   		console.log(`${userVO.getUserPW()}`)
   	})

@@ -10,8 +10,6 @@ let dayOffsMap;
 let keywordsMap;
 let usersMap;
 
-
-
 function initCommonEvent() {
 	letsMoveWithMouse();
 	getAllKeyword();
@@ -131,4 +129,14 @@ function event_direct(selector) {
 		let keyword = searchInput.value;
 		location.href = `${rootURL}/jsp/search/books/searchBooks.jsp?keyword=${keyword}#search`
 	}
+}
+
+function hasSession() {
+	if ("${userVO}" === null) {
+    alert("your session is expired");
+//    location.href = `${rootURL}/jsp/user/login.jsp`;
+    location.href = `${rootURL}/user/login.jsp`;
+    return false;
+  }
+  return true;
 }

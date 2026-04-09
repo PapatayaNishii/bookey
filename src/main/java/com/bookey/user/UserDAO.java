@@ -1,8 +1,10 @@
 package com.bookey.user;
 
+import java.awt.List;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.Map;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -164,7 +166,18 @@ public class UserDAO {
     JSONArray userList = new JSONArray();
     try {
       conn = dataFactory.getConnection();
-      String query = "SELECT * FROM TBL_USER";
+      String query = ""
+          + "SELECT A.USERID"
+          + "     , A.USERPW"
+          + "     , A.EMAIL"
+          + "     , A.NAME"
+          + "     , A.ADDRESS"
+          + "     , A.IS_OPEN_TO_MARKETING"
+          + "     , TO_CHAR(A.BIRTHDAY, 'YYYY-MM-DD') AS BIRTHDAY"
+          + "     , A.GENDER"
+          + "     , A.RANK"
+          + "     , A.AUTHNUM"
+          + "  FROM TBL_USER A";
       pstmt = conn.prepareStatement(query);
       ResultSet rs = pstmt.executeQuery();
       while (rs.next()) {
@@ -190,4 +203,61 @@ public class UserDAO {
     }
     return userList;
 	}
+
+	public JSONArray selectAllRank() {
+	  JSONArray rankList = new JSONArray();
+	  try {
+	    conn = dataFactory.getConnection();
+	    String query = ""
+	        + "SELECT CODE"
+	        + "     , VALUE"
+	        + "     , TO_NUMBER(REMARK) AS SEQ"
+	        + "  FROM TBL_MASTER"
+	        + " WHERE 1=1"
+	        + "   AND TABLE_NAME = 'TBL_USER'"
+	        + "   AND COLUMN_NAME = 'RANK'";
+	    pstmt = conn.prepareStatement(query);
+	    ResultSet rs = pstmt.executeQuery();
+	    while (rs.next()) {
+	      JSONObject rank = new JSONObject();
+	      rank.put("CODE", rs.getString("CODE"));
+	      rank.put("VALUE", rs.getString("VALUE"));
+	      rank.put("SEQ", rs.getString("SEQ"));
+	      rankList.add(rank);
+	    }
+	    rs.close();
+	    pstmt.close();
+	    conn.close();
+	  } catch (Exception e) {
+	    // TODO: handle exception
+	    e.printStackTrace();
+	  }
+	  return rankList;
+	}
+	
+	public int updateRank(Map<String, Object> paramMap) {
+	  int updateResult = -1;
+	  try {
+	    conn = dataFactory.getConnection();
+	    String userId = paramMap.get("userId").toString();
+	    String newRank = paramMap.get("newRank").toString();
+	    String currentId = paramMap.get("currentId").toString();
+	    String query = ""
+	        + "UPDATE TBL_USER"
+	        + "   SET RANK = '"+newRank+"'"
+	        + "     , UPDATED_USER = '"+currentId+"'"
+	        + "     , UPDATED_DATE = SYSDATE"
+	        + " WHERE 1=1"
+	        + "   AND USERID = '"+userId+"'"
+      ;
+	    pstmt = conn.prepareStatement(query);
+	    updateResult = pstmt.executeUpdate();
+	    pstmt.close();
+	    conn.close();
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+	  return updateResult;
+	}
 }
+

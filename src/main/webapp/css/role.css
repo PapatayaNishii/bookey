@@ -1,0 +1,107 @@
+/* background */
+#background {
+	background: url("../image/background/centre/bg_centre05.jpg") no-repeat center/cover;
+}
+#background .main .cover {
+	background-color: rgba(237, 188, 200, 0.8);
+}
+
+/* role */
+#background .cover .center .container {
+	width: 90%;
+	height:82vh;
+	background: var(--main-white);
+	border-radius: 24px;
+	overflow: scroll;
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	left: 50%;
+	top: calc(50% + (var(--height-header) / 2));
+	transform: translate(-50%, -50%);
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+#background .cover .center .container::-webkit-scrollbar {
+	display: none;
+}
+#background .cover .center .container .title {
+	background-color: var(--main-red);
+	color: var(--main-white);
+	text-align: center;
+	font-size: 32px;
+	font-weight: bold;
+	height: 80px;
+	line-height: 80px;
+}
+#background .cover .center .container .frmRole .dataList .row {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  align-items: center;
+  gap:8px;
+}
+#background .cover .center .container .frmRole .dataList .row.updated {
+	background-color:var(--main-paleGreen);
+}
+#background .cover .center .container .frmRole .dataList .row > * {
+  flex: 0;
+  padding: 8px;
+}
+#background .cover .center .container .frmRole .dataList .row > .userImage {
+	border : 4px solid var(--main-black);
+	width : 96px;
+	height : 96px;
+	object-fit : cover;
+	border-radius: 50%;
+	padding: 0;
+}
+#background .cover .center .container .frmRole .dataList .row > .userName {
+	flex: none;
+	width : 120px;
+	text-align:center;
+}
+#background .cover .center .container .frmRole .dataList .row > .userEmail {
+	flex: none;
+	width: 216px;
+}
+#background .cover .center .container .frmRole .dataList .row > .userBirthday {
+	flex: none;
+	width: 120px;
+}
+#background .cover .center .container .frmRole .dataList .row > .userRank {
+	flex: 1 1 120px;
+}
+#background .cover .center .container .frmRole .dataList .row > .userRank > * {
+	width:100%;
+}
+#background .cover .center .container .frmRole .buttons {
+	width: 100%;
+	height: 64px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 16px;
+	flex-grow: 0;
+	flex-shrink: 0;
+/* 	border: 1px ridge rgba(211, 211, 211, 1); */
+	padding:16px 0;
+}
+
+#background .cover .center .container .frmRole .buttons > input.reset {
+	width:46%;
+	height:100%;
+	background: linear-gradient(45deg, transparent 0%, transparent 20%, rgba(152, 251, 152, 0.2) 80%, rgba(152, 251, 152, 0.2) 100%);
+	border: 1px outset var(--main-darkSeaGreen);
+}
+#background .cover .center .container .frmRole .buttons > input.reset:active {
+	background: rgba(152, 251, 152, 0.2);
+}
+#background .cover .center .container .frmRole .buttons > input.submit {
+	width:46%;
+	height:100%;
+	background: linear-gradient(45deg, transparent 0%, transparent 20%, rgba(164, 97, 113, 0.2) 80%, rgba(164, 97, 113, 0.2) 100%);
+	border: 1px outset var(--main-dustyRose); 
+}
+#background .cover .center .container .frmRole .buttons > input.submit:active {
+	background: rgba(164, 97, 113, 0.2);
+}

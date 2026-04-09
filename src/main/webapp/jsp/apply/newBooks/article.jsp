@@ -33,11 +33,19 @@
 	</header>
 	<div class="content">
 		<div class="contentArea">
-			<div class="contentTitle">
-				<span></span>
-			</div>
-			<div class="contentPlot  indented">
-			</div>
+<%-- 			${userVO.getRank() } --%>
+			<c:choose>
+				<c:when test="${userVO.rank == 'A' || userVO.rank == 'M' }">
+					<div class="contentTitle">
+						<span></span>
+					</div>
+					<div class="contentPlot  indented">
+					</div>
+				</c:when>
+				<c:otherwise>
+					<div>Contact to 010-1234-5678 to apply for a new book</div>
+				</c:otherwise>
+			</c:choose>
 		</div>
 	</div>
 </article>

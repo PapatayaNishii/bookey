@@ -1,6 +1,10 @@
 package com.bookey.user;
 
+import java.util.ArrayList;
+import java.util.Map;
+
 import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
 public class UserService {
 
@@ -30,5 +34,18 @@ public class UserService {
 	
 	public JSONArray loadAllUsers() {
 	  return userDAO.selectAllUser();
+	}
+	public JSONArray loadAllRanks() {
+	  return userDAO.selectAllRank();
+	}
+	
+	@SuppressWarnings("unchecked")
+  public int changeRank(ArrayList<Object> rankList) {
+	  int resultInt = 0;
+	  for(int i = 0; i < rankList.size(); i++) {
+	    Map<String, Object> paramMap = (Map<String, Object>)rankList.get(i);
+	    resultInt += userDAO.updateRank(paramMap);
+	  }
+	  return resultInt;
 	}
 }
