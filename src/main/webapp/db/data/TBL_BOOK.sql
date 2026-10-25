@@ -1,7 +1,7 @@
 ﻿SET DEFINE OFF;
 --SQL Statement which produced this data:
 --
---  SELECT ROWID, A.* FROM TBL_BOOK  A;
+--  SELECT ROWID, A.* FROM TBL_BOOK  A; 
 --
 Insert into BOOKEY.TBL_BOOK
    (BOOKID, CATGID, BOOKNM, PUBLISHER, AUTHOR, 
